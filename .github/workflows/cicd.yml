@@ -18,10 +18,10 @@ jobs:
 
       # Step 2: Build Docker image
       - name: Build Docker image
-        run: docker build -t employee-website:latest .
+        run:  sudo docker build -t employee-website:latest .
 
       # Step 3: Test Docker image
       - name: Run Docker container
         run: |
-          docker run -d -p 8086:80 --name test-employee employee-website:latest
-          docker ps
+          sudo docker run -d -p 8086:80 --name test-employee employee-website:latest
+          sudo docker ps
