@@ -1,5 +1,8 @@
-FROM openjdk:17-jdk-slim
-WORKDIR /app
-COPY hello.java .
-RUN javac hello.java
-CMD ["java", "hello"]
+# Use nginx image
+FROM nginx:latest
+
+# Copy HTML file to nginx web directory
+COPY index.html /usr/share/nginx/html/index.html
+
+# Expose port
+EXPOSE 80
